@@ -25,7 +25,7 @@ type SOAP struct {
 }
 
 // MakeRequest creates new soap request instance
-func MakeRequest(body string, xmlns []string, user string, password string, tokenAge time.Duration) SOAP {
+func makeSoap(body string, xmlns []string, user string, password string, tokenAge time.Duration) SOAP {
 	return SOAP{
 		Body:     body,
 		XMLNs:    xmlns,
@@ -36,7 +36,7 @@ func MakeRequest(body string, xmlns []string, user string, password string, toke
 }
 
 // Call calls the soap request on xaddr address and returns parsed xml response
-func (soap SOAP) Call(xaddr string) (mxj.Map, error) {
+func (soap SOAP) call(xaddr string) (mxj.Map, error) {
 	request := soap.createRequest()
 
 	// veryfying
