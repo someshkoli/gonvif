@@ -1,5 +1,5 @@
 # gonvif
-Go implementation for onvif
+Go implementation for onvif protocol
 
 
 # Background
